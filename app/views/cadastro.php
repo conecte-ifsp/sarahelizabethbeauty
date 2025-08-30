@@ -13,7 +13,7 @@
 
     <main class="container">
 
-        <form class="login-box" action="proxima-etapa-do-cadastro.php" method="POST">
+        <form class="login-box" action="processar-cadastro.php" method="POST">
             <h2 class="titulo">CADASTRO</h2>
             
             <div class="input-container">

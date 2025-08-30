@@ -14,7 +14,7 @@
 
     <main class="container">
 
-        <form class="login-box" action="processar-login.php" method="POST">
+        <form class="login-box" action="../public/assets/js/AuthLogin.js" method="POST">
             <h2 class="titulo">Login</h2>
 
             <div class="input-container">
