@@ -13,19 +13,19 @@
 
     <main class="container">
 
-        <form class="login-box" action="processar-cadastro.php" method="POST">
+        <form class="login-box" action="../models/processar-cadastro.php" method="POST">
             <h2 class="titulo">CADASTRO</h2>
             
             <div class="input-container">
-                <input type="text" name="cadastro-nome" placeholder="Digite seu nome completo" required>
+                <input type="text" name="cadastro-mail" placeholder="Digite seu email" required>
             </div>
             
             <div class="input-container">
-                <input type="text" name="cadastro-apelido" placeholder="Digite seu apelido" required>
+                <input type="text" name="cadastro-password" placeholder="Digite sua senha" required>
             </div>
 
             <div class="input-container">
-                <input type="date" name="cadastro-data-nascimento" placeholder="Digite sua data de nascimento" required>
+                <input type="date" name="cadastro-date" placeholder="Digite sua data de agendamento" required>
             </div>
 
             <button type="submit" class="login-button">PRÓXIMO</button>

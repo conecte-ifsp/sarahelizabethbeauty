@@ -14,22 +14,20 @@
 
     <main class="container">
 
-        <form class="login-box" action="../../public/index.php" method="POST">
+        <form class="login-box" action="../views/login.php" method="POST">
             <?php
                         include_once "../core/conn.php";
-                        $email = $_POST["login-mail"];
-                        $senha = $_POST["login-password"];
-                        $sql = "select*from usuarios WHERE email = '$email' AND senha = '$senha' ";
-                        $result = mysqli_query ($conn,$sql);
+                        $email = $_POST["cadastro-mail"];
+                        $senha = $_POST["cadastro-password"];
+                        $select = "SELECT * FROM usuarios WHERE email = '$email' AND senha = '$senha' ";
+                        $result = mysqli_query ($conn,$select);
                         if(mysqli_num_rows($result) > 0){
-                            $_SESSION["email"] = $email;
-                            $_SESSION["senha"] = $senha;
-                            header ('location:../../public/index.html');
+                            echo "Usuário já cadastrado!"; 
+                            header ('location:../views/login.php');
                         } else {
-                            echo "E-mail e senha errado!";
-                            
-                            unset( $_SESSION["email"]);
-                            unset( $_SESSION["senha"]);
+                            $insert = "INSERT INTO usuarios (email, senha) VALUES ('$email', '$senha')";
+                            $result = mysqli_query ($conn,$insert);
+                            echo "Cadastro bem sucedido!";
                         }
 
                     ?>
