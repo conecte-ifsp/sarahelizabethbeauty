@@ -6,7 +6,7 @@ ob_clean();
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-if (str_starts_with($uri, "public/") || preg_match('/\.(css|js|jpg|png|jpeg|gif|svg|json)$/', $uri)) {
+if (str_starts_with($uri, needle: "public/") || str_starts_with($uri, "app/views/") || preg_match('/\.(css|js|jpg|png|jpeg|gif|svg|json)$/', $uri)) {
     $fileExtension = strtolower(pathinfo($uri, PATHINFO_EXTENSION));
     
     if (!file_exists($uri) || is_dir($uri)) {

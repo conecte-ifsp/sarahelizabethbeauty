@@ -14,7 +14,7 @@
 
     <main class="container">
 
-        <form class="login-box" action="../public/assets/js/AuthLogin.js" method="POST">
+        <form class="login-box" action="../models/validar-login.php" method="POST">
             <h2 class="titulo">Login</h2>
 
             <div class="input-container">

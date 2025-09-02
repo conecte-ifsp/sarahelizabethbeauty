@@ -1,3 +1,2 @@
-//Puxa o email e senha do formulario
-
-//Aciona a cadeira de autenticação
+n acredito q htaccees ta me lascando 
+// pq tem um valida-loing.php e um validaR-login.php
