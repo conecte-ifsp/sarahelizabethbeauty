@@ -1,21 +1,10 @@
-#sessao1 {
-    background: url(../img/bg1.png) no-repeat center center/cover; /* nao repete, centraliza horizontal/vertical e cover garante que o fundo preencha toda a área disponível, sem distorcer a imagem */
-    top: 0;
-    right: 0;
-
-
-    
-}
-
-
 #logo {
     width: 30vw;
     max-width: 300px;
     height: auto;
     margin-bottom: 2vw;
-}
 
-/* SESSÃO LOGIN */
+}
 
 #texto {
     width: 50%;
@@ -42,55 +31,76 @@ footer img {
     left: 0;
     width: 100vw;
     height: 2vh;
+}/*  */
+
+#sessao1 {
+    background: url(../img/bg1.png) no-repeat;
+    background-position: 850px top;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    position: relative;
 }
 
-/* SESSÃO MENU */
+
+
+#menuContainer {
+    position: relative;
+    width: 100%; 
+    height: 100%; 
+    z-index: 1000; 
+}
+
+
+
+#logo-area {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    z-index: 10000;
+    cursor: pointer; /* Para mostrar que é interativo */
+}
+
+#logo-area svg {
+    width: auto;
+    height: 50px;
+}
 
 #sessaomenu {
     position: absolute;
     overflow: visible;
-    text-align: center;
-   
-}
-#logoBtn {
-    width: 30px;   
-    height: auto;  
-    position: fixed; 
-}
-
-.logo-menu-container {
-    position: absolute;
-    display: inline-block;
+    z-index: 5000; 
+    
 }
 
 .menu-nav {
-    position: absolute;
-    transform: translateX(-50%);
+    position: fixed;
+    top: 65px; /* Mesmo valor do top em #sessaomenu */
+    right: 0;
+    right: 0;
     width: 200px;
-    background: #8E3F7D;
+    background: var(--roxo-escuro);
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 5px 0 0 5px ;
     z-index: 1000;
-    /* animação suave */
     opacity: 0;
     transform: translateY(-6px);
     pointer-events: none;
-    /* evita interação quando invisível */
     transition: opacity .18s ease, transform .18s ease;
-   
-}
 
+}
 
 .logo-menu-container:hover .menu-nav,
 .logo-menu-container.open .menu-nav {
-
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
+
 }
 
-
 .menu-nav {
+
     margin-top: 0;
 }
 
@@ -105,10 +115,11 @@ footer img {
 }
 
 .menu-nav ul li a {
-    color: #fff;
+    color: var(--branco);
     text-decoration: none;
-    display: flex;          
-  justify-content: center; 
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
 }
 
 
@@ -119,7 +130,6 @@ footer img {
     margin: 0 auto 12px;
 }
 
-
 .menu-nav .redes {
     display: flex;
     justify-content: center;
@@ -127,66 +137,75 @@ footer img {
     margin-top: 12px;
 }
 
-/* SESSÃO 1 */
+#sessaomenu svg path {
+    fill: var(--branco) !important;
+    width: 100px;
+}
 
-#sessao1 svg path {
-    fill: purple !important;
-  }
-  
-  #menuNav svg path {
+
+#menuNav svg path {
     fill: white !important;
     width: 100px;
-  }
-  
-  #sessao1 svg {
-    width: 500px;  
-    height: auto;  /* Para manter a proporção original */
-}
-  
-/* Estilização Sessão 2 */
-
-#sessao2{
-    padding: 3rem;
 }
 
-#sessao-blocos{
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100vw;
-    gap: 1rem;
-}
-
-.bloco-info{
-    width: 10rem;
-}
-
-#sessao-experiencia{
-    background-image: url('assets/img/gif.gif');
-    background-size: cover;
-    background-position: center;
-    padding: 5rem;
-    z-index: -1;
-    position: relative;
-    align-items: center;
-}
-
-#animacao-2-gif{
-    width: 80vw;
-    position: relative;
-    left: auto;
-}
-
-#mulher-sessao2{
+#sessao1 svg {
+    width: 500px;
+    height: auto;
     position: absolute;
-    width: 35vw;
-    right: 35vw;
+    left: 20vh;
+    top: 1vh;
 }
 
-#experiencia-texto{
-    width: 350px;
+#mulhersessao1 {
     position: absolute;
-    right: 10rem;
-    bottom: 15rem;
+    left: 100vh;
+    bottom: 0;
+
+}
+
+#mulhersessao1 img {
+    width: 600px;
+}
+
+.logoescrita sgv{
+    position: absolute;
+    left: 20vh;
+  
+}
+#textosessao1{
+    position: absolute;
+     bottom: 40vh;
+     left: 20vh;
+}
+
+.font-glow-better{
+    color: var(--roxo-escuro);
+    font-size: 100px;
+}
+.bold  {
+    color: var(--salmao);
+    font-size: 80px;
+}
+.fontebla{
+    color: var(--salmao);
+    font-size: 30px;
+}
+
+#botaosessao1{
+    background-color: var(--lilas);
+    width: 200px;
+    height: 50px;
+    position: absolute;
+    left: 15vh;
+    border-radius: 10px;
+    border: none;
+    margin-top: 10px;
+    color: var(--branco);
+    font-size: 20px;
+}
+
+#coroasessao1 svg {
+position: absolute;
+left: 100vh;
 }
 
