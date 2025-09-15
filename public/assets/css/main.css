@@ -46,10 +46,27 @@ main {
     height: auto;
 }
 
+.container{
+    display: flex;
+    font-family: sans-serif;
+}
+
 .font-glow-better {
     font-family: "GlowBetter";
     font-weight: 500;
     font-size: 2vw;
+}
+
+.font-better-signature{
+    font-family: "Better Signature";
+}
+
+.thin{
+    font-weight: 200;
+}
+
+.bold{
+    font-weight: bolder;
 }
 
 
