@@ -1,59 +1,27 @@
-@font-face {
-    font-family: 'GlowBetter'; 
-    src: url('../fonts/glowbetter-jeelo.otf') format('opentype'); 
-}
-
-*{
-    padding: 0;
-    margin: 0;
-}
-
-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0; /* evita margens padrão do browser */
-    flex-direction: column; /* pra alinhar os itens verticalmente */
-}
-
-main{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: 98vh;
-}
-
-.font-glow-better {
-    font-family: "GlowBetter";
-    font-weight: 500;
-    font-size: 2vw;
-}
-
 #logo {
     width: 30vw;
     max-width: 300px;
     height: auto;
     margin-bottom: 2vw;
+
 }
 
-#texto{
+#texto {
     width: 50%;
 }
 
-#texto p{
+#texto p {
     font-size: 200%;
 }
 
-#olhos{
+#olhos {
     width: 30vw;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#olhos img{
+#olhos img {
     width: 100%;
 }
 
@@ -65,3 +33,167 @@ footer img {
     height: 2vh;
 }
 
+#sessao1 {
+    background: url(../img/bg1.png) no-repeat;
+    background-position: 850px top;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+#sessaomenu {
+    position: absolute;
+    overflow: visible;
+    text-align: center;
+}
+
+.logo-menu-container {
+    position: absolute;
+    display: inline-block;
+    color: var(--branco);
+
+}
+
+.logo-area {
+    position: absolute;
+    z-index: 1000;
+
+}
+
+.logo-area svg {
+    width: 30px;
+    height: auto;
+    position: absolute;
+    
+}
+
+
+.menu-nav {
+    position: absolute;
+    transform: translateX(-50%);
+    width: 200px;
+    background: var(--roxo-escuro);
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1000;
+    /* animação suave */
+    opacity: 0;
+    transform: translateY(-6px);
+    pointer-events: none;
+    /* evita interação quando invisível */
+    transition: opacity .18s ease, transform .18s ease;
+
+}
+
+.logo-menu-container:hover .menu-nav,
+.logo-menu-container.open .menu-nav {
+
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.menu-nav {
+    margin-top: 0;
+}
+
+.menu-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-nav ul li {
+    margin: 8px 0;
+}
+
+.menu-nav ul li a {
+    color: var(--branco);
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+}
+
+
+.menu-nav .imgmenu {
+    width: 150px;
+    height: auto;
+    display: block;
+    margin: 0 auto 12px;
+}
+
+.menu-nav .redes {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+#sessaomenu svg path {
+    fill: var(--branco) !important;
+    width: 100px;
+}
+
+#sessao1 svg path {
+    fill: purple !important;
+
+}
+
+#menuNav svg path {
+    fill: white !important;
+    width: 100px;
+}
+
+#sessao1 svg {
+    width: 500px;
+    height: auto;
+    position: absolute;
+    left: 20vh;
+}
+
+#mulhersessao1 {
+    position: absolute;
+    left: 100vh;
+    bottom: 0;
+
+}
+
+#mulhersessao1 img {
+    width: 600px;
+}
+
+.logoescrita sgv{
+    position: absolute;
+   left: 20vh;
+}
+#textosessao1{
+    position: absolute;
+     bottom: 40vh;
+     left: 20vh;
+}
+
+.font-glow-better{
+    color: var(--roxo-escuro);
+    font-size: 100px;
+}
+.bold  {
+    color: var(--salmao);
+    font-size: 80px;
+}
+.fontebla{
+    color: var(--salmao);
+    font-size: 30px;
+}
+
+#botaosessao1{
+    background-color: var(--lilas);
+    width: 200px;
+    height: 50px;
+    position: absolute;
+    left: 15vh;
+    border-radius: 10px;
+    border: none;
+    margin-top: 10px;
+    color: var(--branco);
+}
