@@ -209,3 +209,65 @@ position: absolute;
 left: 100vh;
 }
 
+/* Estilização Sessão 2 */
+
+#sessao2{
+    background-color: var(--laranja-claro);
+}
+
+#sessao-blocos{
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100vw;
+}
+
+.bloco-info{
+    width: 12rem;
+}
+
+.bloco-info > h3{
+    font-size: 30px;
+}
+
+#bloco-roxo{
+    background-color: var(--roxo-escuro);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#bloco-roxo > .rosa {
+    font-size: 110px;
+}
+
+#sessao-experiencia{
+    background-image: linear-gradient(to bottom, var(--laranja-claro), var(--branco));
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    align-items: center;
+    height: 100vh;
+}
+
+#animacao-2-gif{
+    position: relative;
+    width: 80vw;
+    left: 10vw;
+    top: 2rem;
+}
+
+#mulher-sessao2{
+    position: absolute;
+    width: 35vw;
+    left: 30vw;
+}
+
+#experiencia-texto{
+    width: 250px;
+    position: relative;
+    right: 15rem;
+    top: 8rem;
+}
+
