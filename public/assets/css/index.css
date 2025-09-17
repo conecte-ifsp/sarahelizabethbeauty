@@ -1,59 +1,27 @@
-@font-face {
-    font-family: 'GlowBetter'; 
-    src: url('../fonts/glowbetter-jeelo.otf') format('opentype'); 
-}
-
-*{
-    padding: 0;
-    margin: 0;
-}
-
-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0; /* evita margens padrão do browser */
-    flex-direction: column; /* pra alinhar os itens verticalmente */
-}
-
-main{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: 98vh;
-}
-
-.font-glow-better {
-    font-family: "GlowBetter";
-    font-weight: 500;
-    font-size: 2vw;
-}
-
 #logo {
     width: 30vw;
     max-width: 300px;
     height: auto;
     margin-bottom: 2vw;
+
 }
 
-#texto{
+#texto {
     width: 50%;
 }
 
-#texto p{
+#texto p {
     font-size: 200%;
 }
 
-#olhos{
+#olhos {
     width: 30vw;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#olhos img{
+#olhos img {
     width: 100%;
 }
 
@@ -63,5 +31,247 @@ footer img {
     left: 0;
     width: 100vw;
     height: 2vh;
+}/*  */
+
+#sessao1 {
+    background: url(../img/bg1.png) no-repeat;
+    background-position: 850px top;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+
+
+#menuContainer {
+    position: relative;
+    width: 100%; 
+    height: 100%; 
+    z-index: 1000; 
+}
+
+
+
+#logo-area {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    z-index: 10000;
+    cursor: pointer; /* Para mostrar que é interativo */
+}
+
+#logo-area svg {
+    width: auto;
+    height: 50px;
+}
+
+#sessaomenu {
+    position: absolute;
+    overflow: visible;
+    z-index: 5000; 
+    
+}
+
+.menu-nav {
+    position: fixed;
+    top: 65px; /* Mesmo valor do top em #sessaomenu */
+    right: 0;
+    right: 0;
+    width: 200px;
+    background: var(--roxo-escuro);
+    padding: 20px;
+    border-radius: 5px 0 0 5px ;
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(-6px);
+    pointer-events: none;
+    transition: opacity .18s ease, transform .18s ease;
+
+}
+
+.logo-menu-container:hover .menu-nav,
+.logo-menu-container.open .menu-nav {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+
+}
+
+.menu-nav {
+
+    margin-top: 0;
+}
+
+.menu-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-nav ul li {
+    margin: 8px 0;
+}
+
+.menu-nav ul li a {
+    color: var(--branco);
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+
+
+.menu-nav .imgmenu {
+    width: 150px;
+    height: auto;
+    display: block;
+    margin: 0 auto 12px;
+}
+
+.menu-nav .redes {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+#sessaomenu svg path {
+    fill: var(--branco) !important;
+    width: 100px;
+}
+
+
+#menuNav svg path {
+    fill: white !important;
+    width: 100px;
+}
+
+#sessao1 svg {
+    width: 500px;
+    height: auto;
+    position: absolute;
+    left: 20vh;
+    top: 1vh;
+}
+
+#mulhersessao1 {
+    position: absolute;
+    left: 100vh;
+    bottom: 0;
+
+}
+
+#mulhersessao1 img {
+    width: 600px;
+}
+
+.logoescrita sgv{
+    position: absolute;
+    left: 20vh;
+  
+}
+#textosessao1{
+    position: absolute;
+     bottom: 40vh;
+     left: 20vh;
+}
+
+#textosessao1 > .font-glow-better{
+    color: var(--roxo-escuro);
+    font-size: 100px;
+}
+.bold  {
+    color: var(--salmao);
+    font-size: 80px;
+}
+.fontebla{
+    color: var(--salmao);
+    font-size: 30px;
+}
+
+#botaosessao1{
+    background-color: var(--lilas);
+    width: 200px;
+    height: 50px;
+    position: absolute;
+    left: 15vh;
+    border-radius: 10px;
+    border: none;
+    margin-top: 10px;
+    color: var(--branco);
+    font-size: 20px;
+}
+
+#coroasessao1 svg {
+position: absolute;
+left: 100vh;
+}
+
+/* Estilização Sessão 2 */
+
+#sessao2{
+    background-color: var(--laranja-claro);
+}
+
+#sessao-blocos{
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100vw;
+}
+
+.bloco-info{
+    width: 12rem;
+}
+
+.bloco-info > .font-glow-better{
+    font-size: 40px;
+}
+
+.bloco-info > h3{
+    font-size: 30px;
+}
+
+#bloco-roxo{
+    background-color: var(--roxo-escuro);
+    padding: 2px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#bloco-roxo > .rosa {
+    font-size: 110px;
+}
+
+#sessao-experiencia{
+    background-image: linear-gradient(to bottom, var(--laranja-claro), var(--branco));
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    align-items: center;
+    height: 100vh;
+}
+
+#animacao-2-gif{
+    position: relative;
+    width: 80vw;
+    left: 10vw;
+    top: 2rem;
+}
+
+#mulher-sessao2{
+    position: absolute;
+    width: 35vw;
+    left: 30vw;
+}
+
+#experiencia-texto{
+    width: 250px;
+    position: relative;
+    right: 15rem;
+    top: 8rem;
 }
 
