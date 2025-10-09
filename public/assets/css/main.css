@@ -8,15 +8,7 @@
     --lilas: #a497dc;
     --branco:#fff ;
     --preto: #000 ;
-    --laranja-claro: #FACFC6;
-    --lavanda:  #BF96C2; 
-    --magenta: #8E3F7D;
-    --rosa-bebe: #D9D9D9;
 }
-
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
 
 @font-face {
     font-family: 'GlowBetter';
@@ -25,10 +17,9 @@
 
 @font-face {
     font-family: 'Better Signature';
-    src: url('../fonts/BetterSignature-GODqP.otf') format('opentype');
+    src: url('../fonts/bettersignature-godqp.otf') format('opentype');
     font-style: normal;
 }
-
 
 * {
     padding: 0;
@@ -43,7 +34,6 @@ body {
     /* evita margens padrão do browser */
     flex-direction: column;
     /* pra alinhar os itens verticalmente */
-    font-family: "poppins";
   
 }
 
@@ -56,70 +46,10 @@ main {
     height: auto;
 }
 
-h1, h2, h3, h4 {
-    line-height: 1.5;
-}
-
 .font-glow-better {
     font-family: "GlowBetter";
     font-weight: 500;
     font-size: 2vw;
 }
 
-.font-poppins {
-    font-family: 'Poppins', sans-serif;
-}
 
-.font-better-signature{
-    font-family: 'Better Signature';
-    
-}
-
-.thin{
-    font-weight: 100;
-    font-style: normal;
-}
-
-.regular{
-    font-weight: 400;
-    font-style: normal;  
-}
-
-.bold{
-    font-weight: 800;
-    font-style: normal;
-}
-
-.roxo-escuro{
-    color: var(--roxo-escuro);
-}
-
-.roxo-claro{
-    color: var(--roxo-claro);
-}
-
-.rosa{
-    color:var(--laranja-claro);
-}
-
-.branco{
-    color: var(--branco);
-}
-.rosa-escuro{
-    color: var(--rosa);
-}
-
-.lavanda{
-    color: var(--lavanda);
-}
-
-.preto{
-    color: var(--preto);
-}
-
-.magenta{
-    color: var(--magenta)
-}
-.rosa-bebe{
-    color: var(--rosa-bebe);
-}
