@@ -1,3 +1,45 @@
+
+// Seção Projetos
+
+const projetos = [
+    {
+        imagem: "../assets/img/mulhersessao3.jpg",
+        titulo: "Makeup",
+        expert: "EXPERT EM",
+        peles: "peles",
+        descricao: "Negra, clara, mista e madura."
+    },
+    {
+        imagem: "../assets/img/2mulhersessao3.jpg",
+        titulo: "CABELEIREIRA",
+        expert: " PENTEADOS",
+        peles: "e tranças",
+        descricao: "com acabamento impecávele  proteção para seus fio"
+    }
+];
+
+let indice = 0;
+
+const imgProjeto = document.getElementById("img-projetos");
+const titulo = document.getElementById("titulo");
+const expert = document.getElementById("expert");
+const peles = document.getElementById("peles");
+const descricao = document.getElementById("descricao");
+const seta = document.getElementById("seta");
+
+seta.addEventListener("click", () => {
+    indice++;
+    if(indice >= projetos.length) indice = 0;
+
+    imgProjeto.src = projetos[indice].imagem; 
+    titulo.textContent = projetos[indice].titulo;
+    expert.textContent = projetos[indice].expert;
+    peles.textContent = projetos[indice].peles;
+    descricao.textContent = projetos[indice].descricao;
+});
+
+
+
 // Seleciona os elementos
 const logoArea = document.getElementById("logo-area");
 const sessaoSara = document.getElementById("sessao-sara");
@@ -32,7 +74,7 @@ const svgColoridoEl = logoArea.children[1];
 // Estiliza para animação
 [svgBrancoEl, svgColoridoEl].forEach(svg => {
     svg.style.position = 'absolute';
-     svg.style.right = '1vh'; // margem direita
+     svg.style.right = '1%'; // margem direita
     svg.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
 });
 

@@ -1,18 +1,1512 @@
-#sessao1 {
-    background: url(../img/bg1.png) no-repeat center center/cover; /* nao repete, centraliza horizontal/vertical e cover garante que o fundo preencha toda a área disponível, sem distorcer a imagem */
-    top: 0;
-    right: 0;
+/*Estilização Menu*/
+    .main-header {
+        position: relative;
+        z-index: 5000;
+    }
+
+    .logo-menu-container {
+        position: fixed;
+        top: 5vh;
+        right: 25px;
+        z-index: 6000;
+    }
+
+    #logo-area {
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    #logo-area:hover {
+        transform: scale(1.08);
+    }
+
+    #logo-area svg {
+        width: 25px;
+        height: auto;
+        display: block;
+    }
+
+
+    .menu-nav {
+        position: fixed;
+        top: 14vh;
+        right: 0;
+        width: 230px;
+        background: var(--roxo-escuro);
+
+        padding: 20px;
+        border-radius: 16px 0 0 16px;
+        box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2);
+        z-index: 5500;
+        opacity: 0;
+        transform: translateX(40px);
+        pointer-events: none;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+
+    .logo-menu-container:hover .menu-nav {
+        opacity: 1;
+        transform: translateX(0);
+        pointer-events: auto;
+    }
+
+    .menu-nav svg {
+        width: 180px;
+        display: block;
+        margin: 0 auto 15px;
+    }
+
+    .menu-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 10px 0;
+    }
+
+    .menu-nav ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .menu-nav ul li a {
+        color: var(--branco);
+        text-decoration: none;
+        font-size: 16px;
+        transition: color 0.2s;
+    }
+
+    .menu-nav ul li a:hover {
+        color: var(--rosa-claro);
+    }
+
+    .menu-nav .redes {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    .menu-nav .redes img {
+        width: 22px;
+        height: 22px;
+        transition: transform 0.2s;
+    }
+
+    .menu-nav .redes img:hover {
+        transform: scale(1.15);
+    }
+
+    .menu-nav p {
+        text-align: center;
+        color: var(--branco);
+        margin-top: 12px;
+        font-size: 13px;
+        opacity: 0.8;
+    }
+
+ /*Estilização banner-principal*/
+    .banner-principal {
+        display: flex;
+        width: 100%;
+        height: 100vh;
+    }
+
+
+    .coluna-esquerda {
+        width: 50%;
+        height: 100%;
+        background-color: #FFFFFF;
+        position: relative;
+    }
+
+    .coluna-esquerda__logo {
+        position: absolute;
+        transform: translateX(-50%);
+        width: 24vw;
+        top: 5vh;
+        left: 50%;
+        z-index: 20;
+    }
+
+    .coluna-esquerda__logo svg path {
+        fill: #8E3F7D;
+    }
+
+    .coluna-esquerda__conteudo {
+        position: absolute;
+        margin-top: 8vh;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .coluna-esquerda__texto h1 {
+        line-height: 1.2;
+
+    }
+
+    .coluna-esquerda__texto {
+        text-align: center;
+    }
+
+/* "Sua beleza em" */
+    .titulo-script {
+        display: block;
+        /* faz o <span> se comportar como uma div, ocupando uma linha */
+        font-weight: normal;
+        /* 'regular' */
+        font-size: 3vw;
+        margin-bottom: -2vh;
+        /* puxa o texto de baixo para cima */
+        position: relative;
+        z-index: 2;
+    }
+
+    .titulo-destaque {
+        font-size: 5vw;
+        font-weight: normal;
+        display: block;
+        position: relative;
+        z-index: 1;
+        transform: translateX(0.2vw);
+    }
+
+    .subtitulo {
+        font-weight: normal;
+        font-size: 1.5vw;
+        margin-top: 1.5vh;
+    }
+
+    .coluna-esquerda__botao {
+        width: 33.5vw;
+        height: 8.7vh;
+        background-color: var(--lavanda);
+        color: var(--branco);
+        border: none;
+        border-radius: 50px;
+        margin-top: 10vh;
+        /* texto */
+        text-transform: uppercase;
+        /* texto em maiúsculo */
+        font-weight: bold;
+        font-size: 2.5vw;
+        cursor: pointer;
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .coluna-esquerda__botao:hover {
+        transform: scale(1.03);
+        filter: brightness(1.1);
+        /* cor um pouco mais brilhante */
+    }
+
+    .coluna-esquerda__seta {
+        position: absolute;
+        bottom: 5vh;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .coluna-esquerda__seta svg {
+        height: 2.5vh;
+        width: auto;
+    }
+
+    .coluna-esquerda__seta svg path {
+        stroke: var(--roxo-escuro);
+        stroke-width: 7;
+    }
+
+    /* coluna da direita */
+    .coluna-direita {
+        width: 50%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        background: url('../img/bg1.png') no-repeat;
+        background-size: cover;
+    }
+
+    /* elementos dentro da coluna da direita */
+    /* modelo */
+    .coluna-direita__imagem-mulher {
+        position: absolute;
+        bottom: 0;
+        left: 30%;
+        transform: translateX(-50%);
+        width: 60.06vw;
+        height: 85.74vh;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        z-index: 10;
+    }
+
+    .coluna-direita__imagem-mulher img {
+        max-width: 100%;
+        max-height: 100%;
+        height: auto;
+    }
+
+    /* coroa */
+    .coluna-direita__elemento-fundo {
+        position: absolute;
+        width: 25.5vw;
+        top: 5%;
+        left: 1%;
+        z-index: 5;
+    }
+
+    .coluna-direita__elemento-fundo svg path {
+        stroke: var(--branco);
+        stroke-width: 3px;
+        fill: none;
+    }
+
+/*Estilização Sessão Sobre */
+    .secao-sobre {
+        width: 100%;
+        min-height: 100vh;
+        background-color: var(--laranja-claro);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2vh;
+    }
+
+    /* a barra que segura os 4 blocos */
+    .sobre-barra-info {
+        display: flex;
+        justify-content: center;
+        gap: 1.5vw;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    /* CADA bloco de informação */
+    .bloco-info {
+        flex: 1;
+        padding: 5vh 2vw;
+        text-align: left;
+    }
+
+    /* bloco roxo de destaque */
+    .info-bloco--destaque {
+        background-color: var(--roxo-escuro);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .bloco-info h2 .font-glow-better {
+        font-size: 1.9vw;
+        line-height: 1.2;
+    }
+
+    .info-bloco--destaque .numero {
+        font-size: 6vw;
+        line-height: 1;
+    }
+
+    .bloco-info h3 {
+        font-size: 1.4vw;
+        margin-bottom: 1vh;
+    }
+
+    .bloco-info h4,
+    .bloco-info p {
+        font-size: 1vw;
+    }
+
+    /* área principal com a foto */
+    .sobre-conteudo {
+        position: relative;
+        height: 100vh;
+        margin: 2.5rem auto;
+
+    }
+
+    .sobre-imagens {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .gif-animado {
+        position: absolute;
+        width: 80vw;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+    }
+
+    .mulher-secao-sobre {
+        position: absolute;
+        height: 100vh;
+        width: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+        z-index: 2;
+    }
+
+    #elemento-fundo svg {
+        position: absolute;
+        width: 30.5vw;
+        top: -7%;
+        left: 50%;
+        /* posição central horizontal */
+        transform: translateX(-50%);
+        /* centraliza de fato */
+        z-index: 2;
+    }
+
+    .sobre-texto {
+        z-index: 3;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        position: relative;
+        left: 20vw;
+        top: 23vw;
+    }
+
+    .sobre-texto h1 {
+        font-size: 4vw;
+        margin-bottom: 3vw;
+    }
+
+    .sobre-texto h3 {
+        font-size: 1vw;
+        width: 20vw;
+    }
+
+/* Estilização Sessão Projetos*/
+    #sessao-projetos {
+        background-color: var(--laranja-claro);
+        min-height: 100%;
+        background-image: linear-gradient(to bottom, var(--laranja-claro), var(--branco));
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        height: 100vh;
+        width: 100%;
+    }
+
+    #sessao-projetos h3 {
+        font-size: 30px;
+    }
+
+    #expert {
+        font-size: 80px;
+        z-index: 1;
+    }
+
+    #peles {
+        position: fixed;
+        left: 23vh;
+        top: 13vh;
+        font-size: 70px;
+        z-index: 2;
+
+    }
+
+
+    #mulher-projetos img {
+        position: absolute;
+        left: 20vh;
+        top: 40%;
+        transform: translateY(-50%);
+        width: 400px;
+        height: auto;
+
+    }   
+    #texto-projetos {
+        position: absolute;
+        left: 100vh;
+        top: 45%;
+            transform: translateY(-50%);
+            text-align: center;
+        }
+
+    #seta {
+        position: absolute;
+        right: 0;
+        margin-right: 10px;
+        top: 40%;
+        transform: translateY(-50%);
+    }
+
+    #sessao-projetos h4 {
+        margin-top: 80px;
+
+    }
+
+/* Estilização Sessão Sara*/
+
+    #sessao-sara {
+        background-color: var(--branco);
+        min-height: 100%;
+        padding: 0 5rem;
+        display: flex;
+        align-items: inherit;
+        justify-content: space-evenly;
+    }
+
+    #colunasara-esquerda {
+        position: relative;
+        /* left: 6.6vw;
+    z-index: 1; */
+    }
+
+    #foto-sara {
+        width: 500px;
+        height: auto;
+        /* position: absolute; */
+    }
+
+
+    #colunasara-direita {
+        width: 40%;
+        text-align: justify;
+    }
+
+    #sessao-sara-coroa {
+        position: absolute;
+        height: 31.5vh;
+        width: 40vh;
+        bottom: 50vh;
+        left: 9vh;
+    }
+
+    #colunasara-direita h1 {
+        font-size: 40px;
+
+    }
+
+    #colunasara-direita p {
+        font-size: 20px;
+        margin-top: 25px;
+        line-height: 40px;
+    }
+
+    #sessao-sara-linha {
+        position: relative;
+        border: 0;
+    }
+
+/*Estilização Sessão Contato*/
+    #sessao-contato {
+        background-color: var(--laranja-claro);
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        height: 100vh;
+        width: 100%;
+
+    }
+
+    #sessao-contato-texto-esquerda {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        /* Ajusta para centralizar exatamente no meio da altura */
+        left: 5vw;
+
+    }
+
+    #sessao-contato-texto-esquerda h1 {
+        font-size: 30px;
+    }
+
+    #sessao-contato-texto-esquerda h2 {
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+
+    #sessao-contato-mapa-direita {
+        position: absolute;
+        left: 50vw;
+        top: 45vh;
+        transform: translateY(-50%);
+        /* Ajusta para centralizar exatamente no meio da altura */
+    }
+
+    #sessao-contato-mapa-direita iframe {
+        width: 600px;
+        height: 450px;
+    }
+
+    /*Estilização Footer*/
+    #main-footer {
+        position: relative;
+        width: 100%;
+        height: 200px;
+        /* ajuste conforme necessário */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        /* para o SVG ficar na parte de baixo */
+        align-items: center;
+
+        background-color: #fff;
+        /* ou a cor que você quiser */
+    }
+
+    #main-footer a {
+        text-decoration: none;
+    }
+
+    hr {
+        width: 90%;
+        border-top: 2px solid #8E3F7D;
+        margin: 10px 0;
+    }
+
+    #footer-links {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 10px;
+        font-size: 20px;
+        z-index: 1;
+
+    }
+
+    #footter_img {
+        width: 100%;
+        height: auto;
+        flex-shrink: 0;
+    }
+
+
+/* 🖥️ Notebook / desktop normal */
+@media (max-width: 1280px) {
+
+    /* Estilização Sessão Sara*/
+
+    #foto-sara {
+        width: 400px;
+        height: auto;
+    }
+
+
+    #colunasara-direita {
+        width: 55%;
+    }
+
+    #sessao-sara-coroa {
+        left: 11vh;
+    }
+
+    #colunasara-direita h1 {
+        font-size: 30px;
+
+    }
+
+    #colunasara-direita p {
+        font-size: 19px;
+    }
+
+}
+
+/* 💻 Tablet / notebook médio */
+@media (max-width: 1024px) {
+
+
+/*estilização menu*/
+    .main-header {
+        position: relative;
+        z-index: 5000;
+    }
+
+    .logo-menu-container {
+        position: fixed;
+        top: 5vh;
+        right: 25px;
+        z-index: 6000;
+    }
+
+    #logo-area {
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    #logo-area:hover {
+        transform: scale(1.08);
+    }
+
+    #logo-area svg {
+        width: 25px;
+        height: auto;
+        display: block;
+    }
+
+
+    .menu-nav {
+        position: fixed;
+        top: 14vh;
+        right: 0;
+        width: 180px;
+        background: var(--roxo-escuro);
+        padding: 20px;
+        border-radius: 16px 0 0 16px;
+        box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2);
+        z-index: 5500;
+        opacity: 0;
+        transform: translateX(40px);
+        pointer-events: none;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+
+    .logo-menu-container:hover .menu-nav {
+        opacity: 1;
+        transform: translateX(0);
+        pointer-events: auto;
+    }
+
+    .menu-nav svg {
+        width: 180px;
+        display: block;
+        margin: 0 auto 15px;
+    }
+
+    .menu-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 10px 0;
+    }
+
+    .menu-nav ul li {
+        margin: 8px 0;
+        text-align: center;
+    }
+
+    .menu-nav ul li a {
+        color: var(--branco);
+        text-decoration: none;
+        font-size: 15px;
+        transition: color 0.2s;
+    }
+
+    .menu-nav ul li a:hover {
+        color: var(--rosa-claro);
+    }
+
+    .menu-nav .redes {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    .menu-nav .redes img {
+        width: 22px;
+        height: 22px;
+        transition: transform 0.2s;
+    }
+
+    .menu-nav .redes img:hover {
+        transform: scale(1.15);
+    }
+
+    .menu-nav p {
+        text-align: center;
+        color: var(--branco);
+        margin-top: 12px;
+        font-size: 13px;
+        opacity: 0.8;
+    }
+
+
+/*Estilização banner-principal*/
+    .coluna-esquerda__logo {
+        width: 30vw;
+    }
+
+    .coluna-esquerda__conteudo {
+        margin-top: 8vh;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .coluna-esquerda__texto h1 {
+        line-height: 1.5;
+
+    }
+
+    .coluna-esquerda__texto {
+        text-align: center;
+    }
+
+    /* "Sua beleza em" */
+    .titulo-script {
+        display: block;
+        /* faz o <span> se comportar como uma div, ocupando uma linha */
+        font-weight: normal;
+        /* 'regular' */
+        font-size: 4vw;
+        margin-bottom: -4vh;
+        /* puxa o texto de baixo para cima */
+        position: relative;
+        z-index: 2;
+    }
+
+    .titulo-destaque {
+        font-size: 6vw;
+        font-weight: normal;
+        display: block;
+        position: relative;
+        z-index: 1;
+        transform: translateX(0.2vw);
+    }
+
+    .subtitulo {
+        font-weight: normal;
+        font-size: 1.5vw;
+        margin-top: 1.5vh;
+    }
+
+    .coluna-esquerda__botao {
+        width: 33.5vw;
+        height: 8.7vh;
+        background-color: var(--lavanda);
+        color: var(--branco);
+        border: none;
+        border-radius: 50px;
+        margin-top: 10vh;
+        /* texto */
+        text-transform: uppercase;
+        /* texto em maiúsculo */
+        font-weight: bold;
+        font-size: 2.5vw;
+        cursor: pointer;
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .coluna-esquerda__botao:hover {
+        transform: scale(1.03);
+        filter: brightness(1.1);
+        /* cor um pouco mais brilhante */
+    }
+
+    .coluna-esquerda__seta {
+        position: absolute;
+        bottom: 5vh;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* elementos dentro da coluna da direita */
+    /* modelo */
+    .coluna-direita__imagem-mulher {
+        left: 35%;
+        height: 80vh;
+    }
+
+    /* coroa */
+    .coluna-direita__elemento-fundo {
+        position: absolute;
+        width: 25vw;
+        top: 5%;
+        left: 5%;
+        z-index: 5;
+    }
+
+
+/*Estilização Sessão Sobre */
+    /* a barra que segura os 4 blocos */
+    /* bloco roxo de destaque */
+    .bloco-info h3 {
+        font-size: 1.5vw;
+    }
+
+    .bloco-info h4,
+    .bloco-info p {
+        font-size: 1.2vw;
+    }
+
+    /* área principal com a foto */
+
+    .gif-animado {
+        width: 90vw;
+    }
+
+    #elemento-fundo svg {
+        width: 38vw;
+        left: 45%;
+    }
+
+    .sobre-texto {
+        left: 23vw;
+        top: 30vw;
+    }
+
+
+
+/* Estilização Sessão Projetos*/
+
+    #sessao-projetos h3 {
+        font-size: 30px;
+    }
+
+    #peles {
+        left: 21vh;
+    }
+
+
+    #mulher-projetos img {
+        width: 300px;
+    }
+
+    #texto-projetos {
+        left: 80vh;
+    }
+
+    #seta {
+        position: absolute;
+        right: 0;
+        margin-right: 10px;
+        top: 40%;
+        transform: translateY(-50%);
+    }
+
+    #sessao-projetos h4 {
+        margin-top: 75px;
+
+    }
+
+
+/* Estilização Sessão Sara*/
+
+    #sessao-sara {
+        background-color: var(--branco);
+        min-height: 100%;
+        padding: 0 4rem;
+        display: flex;
+        align-items: inherit;
+        justify-content: space-evenly;
+    }
+
+    #colunasara-esquerda {
+        position: relative;
+        /* left: 6.6vw;
+   z-index: 1; */
+    }
+
+    #foto-sara {
+        width: 380px;
+        height: auto;
+        /* position: absolute; */
+    }
+
+
+    #colunasara-direita {
+        width: 50%;
+        text-align: justify;
+    }
+
+    #sessao-sara-coroa {
+        position: absolute;
+        height: 31.5vh;
+        width: 35vh;
+        bottom: 50vh;
+        left: 11vh;
+    }
+
+    #colunasara-direita h1 {
+        font-size: 25px;
+
+    }
+
+    #colunasara-direita p {
+        font-size: 17px;
+        margin-top: 20px;
+        line-height: 35px;
+    }
+
+
+
+/*Estilização Sessão Contato*/
+
+    #sessao-contato-texto-esquerda h1 {
+        font-size: 27px;
+    }
+
+    #sessao-contato-texto-esquerda h2 {
+        font-size: 17px;
+    }
+
+    #sessao-contato-mapa-direita {
+        position: absolute;
+        left: 50vw;
+        top: 45vh;
+        transform: translateY(-45%);
+
+    }
+
+    #sessao-contato-mapa-direita iframe {
+        width: 450px;
+    }
+
+/*Estilização Footer*/
+    #main-footer {
+        height: 180px;
+    }
+
+}
+
+/* 📱 Celular médio / padrão */
+@media (max-width: 768px) {
+
+    /*Estilização Menu*/
+    .menu-nav {
+        width: 150px;
+    }
+
+    .menu-nav svg {
+        width: 150px;
+    }
+
+
+    .menu-nav p {
+        font-size: 11px;
+
+    }
+
+ /*Estilização banner-principal*/
+
+    .coluna-esquerda__logo {
+       width: 30vw;
+    }
+
+/* "Sua beleza em" */
+    .titulo-script {
+        /* 'regular' */
+        font-size: 4.7vw;
+        margin-bottom: -3vh;
+ 
+    }
+
+    .titulo-destaque {
+        font-size: 7.5vw;
+    }
+
+    .subtitulo {
+        font-size: 1.9vw;
+    }
+
+    /* elementos dentro da coluna da direita */
+    /* modelo */
+    .coluna-direita__imagem-mulher {
+        left: 45%;
+        height: 80vh;
+    }
+
+    /* coroa */
+    .coluna-direita__elemento-fundo {
+        top: 6%;
+        left: 10%;
+
+    }
+
+/*Estilização Sessão Sobre */
+    /* a barra que segura os 4 blocos */
+    /* CADA bloco de informação */
+    /* bloco roxo de destaque */
+    .bloco-info h3 {
+        font-size: 1.7vw;
+    }
+
+    .bloco-info h4,
+    .bloco-info p {
+        font-size: 1.4vw;
+    }
+
+    /* área principal com a foto */
+    .gif-animado {
+        width: 85vw;
+    }
+
+    .mulher-secao-sobre {
+        height: 90vh;
+    }
+
+    #elemento-fundo svg {
+        width: 40vw;
+        top: -2%;
+    }
+
+    .sobre-texto {
+        left: 28vw;
+        top: 45vw;
+    }
+
+    .sobre-texto h1 {
+        font-size: 4.1vw;
+    }
+
+    .sobre-texto h3 {
+        font-size: 1.2vw;
+    }
+
+/* Estilização Sessão Projetos*/
+
+    #sessao-projetos h3 {
+        font-size: 30px;
+    }
+
+    #expert {
+        font-size: 60px;
+    }
+
+    #peles {
+        left: 14vh;
+        top: 13vh;
+        font-size: 55px;       
+    }
+
+
+    #mulher-projetos img {
+        left: 10vh;
+        top: 40%;
+        width: 230px;
+
+    }
+
+    #texto-projetos {
+        left: 55vh;
+        top: 45%;
+
+    }
+
+    #sessao-projetos h4 {
+        margin-top: 80px;
+
+    }
+
+/* Estilização Sessão Sara*/
+
+    #colunasara-esquerda {
+        margin-right: 5%;
+    }
+
+    #foto-sara {
+        width: 260px;
+  
+    }
+
+    #colunasara-direita {
+        width: 50%;
+        text-align: justify;
+        margin-bottom: 5%;
+    }
+
+    #sessao-sara-coroa {
+        width: 25vh;
+        bottom: 28vh;
+        left: 8vh;
+    }
+
+    #colunasara-direita h1 {
+        font-size: 18px;
+
+    }
+
+    #colunasara-direita p {
+        font-size: 13px;
+        margin-top: 20px;
+        line-height: 20px;
+    }
+
+/*Estilização Sessão Contato*/
+    #sessao-contato-texto-esquerda h1 {
+        font-size: 23px;
+    }
+
+    #sessao-contato-texto-esquerda h2 {
+        font-size: 15px;
+        margin-bottom: 25px;
+        width: 90%;
+    }
+
+    #sessao-contato-mapa-direita {
+        top: 50vh;
+    }
+
+    #sessao-contato-mapa-direita iframe {
+        width: 350px;
+        height: 390px;
+    }
+
+
+/*Estilização Footer*/
+    #main-footer {
+        height: 150px;
+    }
+}
+
+
+
+
+/* 📱 Celular pequeno */
+@media (max-width: 480px) {
+
+    /*Estilização Menu*/
+    .logo-menu-container {
+        top: 2vh;
+    }
+    #logo-area svg {
+        width: 23px;
+    }
+
+    .menu-nav {
+        width: 135px;
+        height: auto;
+    }
+
+    .menu-nav svg {
+        width: 140px;
+    }
+
+    .menu-nav .redes {
+        margin-top: 13px;
+    }
+
+    .menu-nav .redes img {
+        width: 20px;
+        height: 20px;
+        transition: transform 0.2s;
+    }
+
+    .menu-nav p {
+        font-size: 10px;
+
+    }
+
+ /*Estilização banner-principal*/
+
+    .coluna-esquerda__logo {
+        width: 40vw;
+  
+    }
+
+    .coluna-esquerda__texto h1 {
+        line-height: 1.2;
+
+    }
+
+    .coluna-esquerda__texto {
+        text-align: center;
+    }
+
+/* "Sua beleza em" */
+    .titulo-script {
+        display: block;
+        /* faz o <span> se comportar como uma div, ocupando uma linha */
+        font-weight: normal;
+        /* 'regular' */
+        font-size: 5vw;
+        margin-bottom: -2vh;
+        /* puxa o texto de baixo para cima */
+        position: relative;
+        z-index: 2;
+    }
+
+    .titulo-destaque {
+        font-size: 7.7vw;
+        font-weight: normal;
+        display: block;
+        position: relative;
+        z-index: 1;
+        transform: translateX(0.2vw);
+    }
+
+    .subtitulo {
+        font-weight: normal;
+        font-size: 2.4vw;
+        margin-top: 1.5vh;
+    }
+
+    .coluna-esquerda__botao {
+        width: 33.5vw;
+        height: 8.7vh;
+        background-color: var(--lavanda);
+        color: var(--branco);
+        border: none;
+        border-radius: 50px;
+        margin-top: 10vh;
+        /* texto */
+        text-transform: uppercase;
+        /* texto em maiúsculo */
+        font-weight: bold;
+        font-size: 2.5vw;
+        cursor: pointer;
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .coluna-esquerda__botao:hover {
+        transform: scale(1.03);
+        filter: brightness(1.1);
+        /* cor um pouco mais brilhante */
+    }
+
+    .coluna-esquerda__seta {
+        position: absolute;
+        bottom: 5vh;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .coluna-esquerda__seta svg {
+        height: 2.5vh;
+        width: auto;
+    }
+
+    .coluna-esquerda__seta svg path {
+        stroke: var(--roxo-escuro);
+        stroke-width: 7;
+    }
+
+    /* coluna da direita */
+    /* elementos dentro da coluna da direita */
+    /* modelo */
+    .coluna-direita__imagem-mulher {
+        left: 70%;
+        width: 80vw;
+    }
+
+    /* coroa */
+    .coluna-direita__elemento-fundo {
+        width: 35vw;
+        top: 10%;
+        left: 10%;
+
+    }
+
+
+/*Estilização Sessão Sobre */
+    /* a barra que segura os 4 blocos */
+    /* CADA bloco de informação *
+    /* bloco roxo de destaque */
+
+    .bloco-info h2 .font-glow-better {
+        font-size: 2vw;
+        line-height: 1.2;
+    }
+
+    .info-bloco--destaque .numero {
+        font-size: 7.5vw;
+        line-height: 1;
+    }
+
+    .bloco-info h3 {
+        font-size: 2.5vw;
+        margin-bottom: 1vh;
+    }
+
+    .bloco-info h4,
+    .bloco-info p {
+        font-size: 2vw;
+    }
+
+    /* área principal com a foto */
+    .sobre-conteudo {
+        position: relative;
+        height: 100vh;
+        margin: 2.5rem auto;
+
+    }
+
+    .sobre-imagens {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .gif-animado {
+        position: absolute;
+        width: 100vw;       
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+    }
+
+    .mulher-secao-sobre {
+        height: 82vh;
+    }
+
+    #elemento-fundo svg {
+        width: 55vw;
+        top: 2%;
+    }
+
+    .sobre-texto {
+        left: 35vw;
+        top: 77vw;
+    }
+
+    .sobre-texto h1 {
+        font-size: 5.5vw;
+        margin-bottom: 2vw;
+    }
+
+    .sobre-texto h3 {
+        font-size: 1.8vw;
+        width: 25vw;
+        margin-top: 2vh;
+   
+    }
+
+
+/* Estilização Sessão Projetos*/
+    #sessao-projetos h3 {
+        font-size: 18px;
+    }
+
+    #expert {
+        font-size: 40px;
+
+    }
+
+    #peles {
+        left: 10vh;
+        top: 8vh;
+        font-size: 35px;
+
+    }
+
+    #mulher-projetos img {
+        left: 5vh;
+        top: 40%;
+        width: 155px;
+
+    }  
+
+    #texto-projetos {
+        left: 33vh;
+        top: 50%;
+        }
+
+    #seta {
+        margin-right: 1px;
+        top: 41%;
+       
+    }
+
+      #seta img {
+        width: 82%;
+      }
+
+    #sessao-projetos h4 {
+        margin-top: 50px;
+        font-size: small;
+
+    }
+
+/* Estilização Sessão Sara*/
+
+    #sessao-sara {
+        padding: 0 2rem
+    }
+
+    #foto-sara {
+        width: 200px;
+    }
+
+
+    #colunasara-direita {
+        width: 60%;
+        text-align: justify;
+    }
+
+    #sessao-sara-coroa {
+        height: 31.5vh;
+        width: 20vh;
+        bottom: 20vh;
+        left: 5.2vh;
+    }
+
+    #colunasara-direita h1 {
+        font-size: 15px;
+
+    }
+
+    #colunasara-direita p {
+        font-size: 12px;
+        margin-top: 15px;
+        line-height: 15px;
+    }
+
+/*Estilização Sessão Contato*/
+    #sessao-contato-texto-esquerda {
+        left: 3vw;
+        width: 50%;
+
+    }
+
+    #sessao-contato-texto-esquerda h1 {
+        font-size: 18px;
+    }
+
+    #sessao-contato-texto-esquerda h2 {
+        font-size: 14px;
+        margin-bottom: 25px;
+       
+    }
+
+    #sessao-contato-mapa-direita {
+        left: 50vw;
+        top: 48vh;
+    }
+
+    #sessao-contato-mapa-direita iframe {
+        width: 220px;
+        height: 250px;
+    }
+
+    /*Estilização Footer*/
+    #main-footer {
+        height: 100px;
+    }
+
+    #footer-links {
+        font-size: 17px;
+
+    }
 
 
     
 }
 
-
+/* Estilização Login
 #logo {
     width: 30vw;
     max-width: 300px;
     height: auto;
     margin-bottom: 2vw;
+
 }
 
 #texto {
@@ -40,101 +1534,4 @@ footer img {
     left: 0;
     width: 100vw;
     height: 2vh;
-}
-
-
-#sessaomenu {
-    position: absolute;
-    overflow: visible;
-    text-align: center;
-   
-}
-#logoBtn {
-    width: 30px;   
-    height: auto;  
-    position: fixed; 
-}
-
-.logo-menu-container {
-    position: absolute;
-    display: inline-block;
-}
-
-.menu-nav {
-    position: absolute;
-    transform: translateX(-50%);
-    width: 200px;
-    background: #8E3F7D;
-    padding: 20px;
-    border-radius: 10px;
-    z-index: 1000;
-    /* animação suave */
-    opacity: 0;
-    transform: translateY(-6px);
-    pointer-events: none;
-    /* evita interação quando invisível */
-    transition: opacity .18s ease, transform .18s ease;
-   
-}
-
-
-.logo-menu-container:hover .menu-nav,
-.logo-menu-container.open .menu-nav {
-
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-}
-
-
-.menu-nav {
-    margin-top: 0;
-}
-
-.menu-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.menu-nav ul li {
-    margin: 8px 0;
-}
-
-.menu-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    display: flex;          
-  justify-content: center; 
-}
-
-
-.menu-nav .imgmenu {
-    width: 150px;
-    height: auto;
-    display: block;
-    margin: 0 auto 12px;
-}
-
-
-.menu-nav .redes {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 12px;
-}
-
-#sessao1 svg path {
-    fill: purple !important;
-  }
-  
-  #menuNav svg path {
-    fill: white !important;
-    width: 100px;
-  }
-  
-  #sessao1 svg {
-    width: 500px;  
-    height: auto;  /* Para manter a proporção original */
-}
-  
+} 
