@@ -104,6 +104,30 @@
     opacity: 0.8;
 }
 
+#logo-area {
+    position: relative;
+    width: 43px;
+    height: 85px;
+}
+
+#logo-area svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.logo-fade-in {
+    opacity: 1 !important;
+    transform: scale(1) !important;
+}
+
+.logo-fade-out {
+    opacity: 0 !important;
+    transform: scale(0.9) !important;
+}
+
+
 /*Estilização banner-principal*/
 .banner-principal {
     display: flex;
@@ -335,7 +359,7 @@
 }
 
 .sobre-imagens {
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
@@ -352,7 +376,7 @@
 }
 
 .mulher-secao-sobre {
-    position: absolute;
+    position: relative;
     height: 100vh;
     width: auto;
     left: 50%;
@@ -377,9 +401,9 @@
     display: flex;
     flex-direction: column;
     text-align: left;
-    position: relative;
-    left: 20vw;
-    top: 23vw;
+    position: absolute;
+    left: 80%;
+    top: 47%;
 }
 
 .sobre-texto h1 {
@@ -443,6 +467,26 @@
     transform: translateY(-50%);
 }
 
+#mulher-projetos img,
+#texto-projetos {
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+/* classe que ativa a animação de saída */
+.slide-out {
+  transform: translateX(-100px);
+  opacity: 0;
+}
+
+/* classe que ativa a animação de entrada */
+.slide-in {
+  transform: translateX(100px);
+  opacity: 0;
+}
+.slide-in-active {
+  transform: translateX(0);
+  opacity: 1;
+}
 
 
 /* Estilização Sessão Sara*/
@@ -458,6 +502,7 @@
 
 #colunasara-esquerda {
     position: relative;
+     display: inline-block;
     /* left: 6.6vw;
     z-index: 1; */
 }
@@ -466,6 +511,7 @@
     width: 500px;
     height: auto;
     /* position: absolute; */
+    display: block;
 }
 
 
@@ -478,8 +524,8 @@
     position: absolute;
     height: 31.5vh;
     width: 40vh;
-    bottom: 50vh;
-    left: 9vh;
+    bottom: 85%;
+    left: 20%;
 }
 
 #colunasara-direita h1 {
@@ -600,7 +646,7 @@ hr {
 
 
     #colunasara-direita {
-        width: 55%;
+        width: 53%;
     }
 
     #sessao-sara-coroa {
@@ -674,7 +720,7 @@ hr {
     .logo-menu-container {
         position: fixed;
         top: 5vh;
-        right: 25px;
+        right: -1.25%;
         z-index: 6000;
     }
 
@@ -895,13 +941,6 @@ hr {
         left: 45%;
     }
 
-    .sobre-texto {
-        left: 23vw;
-        top: 30vw;
-    }
-
-
-
 
     /* Estilização Sessão Sara*/
 
@@ -1068,8 +1107,8 @@ hr {
     }
 
     .sobre-texto {
-        left: 28vw;
-        top: 45vw;
+        left: 83% ;
+        top: 44%;
     }
 
     .sobre-texto h1 {
@@ -1174,7 +1213,7 @@ hr {
         left: 68%;
         top: 45vh;
         transform: translate(-50%, -50%);
-        width: 40%;
+        width: 38%;
     }
 
     #sessao-contato-mapa-direita iframe {
@@ -1198,6 +1237,7 @@ hr {
     /*Estilização Menu*/
     .logo-menu-container {
         top: 2vh;
+      
     }
 
     #logo-area svg {
@@ -1206,7 +1246,7 @@ hr {
 
     .menu-nav {
         width: 135px;
-        height: auto;
+          
     }
 
     .menu-nav svg {
@@ -1220,7 +1260,6 @@ hr {
     .menu-nav .redes img {
         width: 20px;
         height: 20px;
-        transition: transform 0.2s;
     }
 
     .menu-nav p {
@@ -1240,76 +1279,19 @@ hr {
 
     }
 
-    .coluna-esquerda__texto {
-        text-align: center;
-    }
-
     /* "Sua beleza em" */
     .titulo-script {
-        display: block;
-        /* faz o <span> se comportar como uma div, ocupando uma linha */
-        font-weight: normal;
-        /* 'regular' */
         font-size: 5vw;
         margin-bottom: -2vh;
-        /* puxa o texto de baixo para cima */
-        position: relative;
-        z-index: 2;
     }
 
     .titulo-destaque {
         font-size: 7.7vw;
-        font-weight: normal;
-        display: block;
-        position: relative;
-        z-index: 1;
-        transform: translateX(0.2vw);
     }
 
     .subtitulo {
-        font-weight: normal;
         font-size: 2.4vw;
         margin-top: 1.5vh;
-    }
-
-    .coluna-esquerda__botao {
-        width: 33.5vw;
-        height: 8.7vh;
-        background-color: var(--lavanda);
-        color: var(--branco);
-        border: none;
-        border-radius: 50px;
-        margin-top: 10vh;
-        /* texto */
-        text-transform: uppercase;
-        /* texto em maiúsculo */
-        font-weight: bold;
-        font-size: 2.5vw;
-        cursor: pointer;
-        transition: transform 0.2s ease-in-out;
-    }
-
-    .coluna-esquerda__botao:hover {
-        transform: scale(1.03);
-        filter: brightness(1.1);
-        /* cor um pouco mais brilhante */
-    }
-
-    .coluna-esquerda__seta {
-        position: absolute;
-        bottom: 5vh;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .coluna-esquerda__seta svg {
-        height: 2.5vh;
-        width: auto;
-    }
-
-    .coluna-esquerda__seta svg path {
-        stroke: var(--roxo-escuro);
-        stroke-width: 7;
     }
 
     /* coluna da direita */
@@ -1355,43 +1337,32 @@ hr {
     }
 
     /* área principal com a foto */
-    .sobre-conteudo {
-        position: relative;
-        height: 100vh;
-        margin: 2.5rem auto;
 
-    }
-
-    .sobre-imagens {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
 
     .gif-animado {
-        position: absolute;
-        width: 100vw;
-        top: 55%;
+        width: 179%;
+        top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 1;
     }
 
+    .sobre-texto {
+    left: 84%;
+    top: 48%;
+}
     .mulher-secao-sobre {
-        height: 82vh;
+        height: 62%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 
     #elemento-fundo svg {
-        width: 55vw;
-        top: 2%;
+        width: 100%;
+        top: -6%;
     }
 
-    .sobre-texto {
-        left: 35vw;
-        top: 77vw;
-    }
 
     .sobre-texto h1 {
         font-size: 5.5vw;
@@ -1436,7 +1407,6 @@ hr {
 
 
     #mulher-projetos img {
-        position: relative;
         bottom: 10vw;
         width: 180px;
     }
@@ -1444,7 +1414,6 @@ hr {
 
 
     #seta {
-        position: absolute;
         right: 0;
         top: 44%;
         transform: translateY(-50%);
@@ -1488,7 +1457,7 @@ hr {
     /*Estilização Sessão Contato*/
     #sessao-contato-texto-esquerda {
         left: 3vw;
-        width: 50%;
+        width: 40%;
 
     }
 
@@ -1503,17 +1472,15 @@ hr {
     }
 
     #sessao-contato-mapa-direita {
-        position: relative;
-        left: 68%;
+        left: 63%;
         top: 45vh;
-        transform: translate(-50%, -50%);
+        transform: (-50%, -50%);
         width: 40%;
     }
 
     #sessao-contato-mapa-direita iframe {
         width: 120%;
         height: 50vh;
-        display: block;
     }
 
     /*Estilização Footer*/
