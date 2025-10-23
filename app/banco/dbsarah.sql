@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 05/09/2025 às 20:31
+-- Tempo de geração: 27/08/2025 às 04:37
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -24,20 +24,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `imagens`
---
-
-CREATE TABLE `imagens` (
-  `id` int(11) NOT NULL,
-  `apelido` varchar(45) NOT NULL,
-  `tipo` varchar(45) NOT NULL,
-  `posicao` int(2) NOT NULL,
-  `endereco` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
 -- Estrutura para tabela `usuarios`
 --
 
@@ -54,18 +40,11 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `permissao`, `email`, `senha`, `nome`) VALUES
-(1, 3, 'admin@sarahelizabeth', 'sarah123@admin', 'Administradora'),
-(4, 0, 'teste@teste.com', 'teste123', '');
+(1, 3, 'admin@sarahelizabeth', 'sarah123@admin', 'Administradora');
 
 --
 -- Índices para tabelas despejadas
 --
-
---
--- Índices de tabela `imagens`
---
-ALTER TABLE `imagens`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Índices de tabela `usuarios`
@@ -78,16 +57,10 @@ ALTER TABLE `usuarios`
 --
 
 --
--- AUTO_INCREMENT de tabela `imagens`
---
-ALTER TABLE `imagens`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
