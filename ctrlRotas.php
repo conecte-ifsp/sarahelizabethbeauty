@@ -11,7 +11,7 @@ if (str_starts_with($uri, needle: "public/") || str_starts_with($uri, "app/views
     
     if (!file_exists($uri) || is_dir($uri)) {
         http_response_code(404);
-        die("404 - Arquivo não encontrado.");
+        die("404 - Arquivo não DJAISDJSAID.");
     }
 
     if ($fileExtension == 'css') {
@@ -26,5 +26,6 @@ if (str_starts_with($uri, needle: "public/") || str_starts_with($uri, "app/views
     }
 } else {
     http_response_code(404);
-    echo "404 - Arquivo não encontrado";
+    echo "404 - Arquivo não BBBBBBB";
 }
+
