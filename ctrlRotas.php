@@ -1,6 +1,5 @@
 <?php
 $uri = $_GET["uri"] ?? '';
-echo 'olá';
 
 ob_clean();
 error_reporting(E_ALL);
@@ -37,6 +36,7 @@ if (str_starts_with($uri, "./public/") || str_starts_with($uri, "./app/views/") 
     http_response_code(404);
     echo "404 - Página não Encontrada";
 }
+
 
 
 
