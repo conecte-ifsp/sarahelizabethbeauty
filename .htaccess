@@ -1,7 +1,5 @@
-<ifmodule mod_rewrite.c>
 RewriteEngine On
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ ctrlRotas.php?uri=$1 [QSA,L]
-</ifmodule>
+RewriteRule public/index.html [L]
