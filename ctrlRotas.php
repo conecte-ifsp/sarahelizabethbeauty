@@ -8,7 +8,7 @@ ini_set('display_errors', 1);
 
 // Rota principal vazia
 if (empty($uri)) {
-    require '/public/index.html'; 
+    require './public/index.html'; 
     exit;
 }
 
@@ -37,6 +37,7 @@ if (str_starts_with($uri, "./public/") || str_starts_with($uri, "./app/views/") 
     http_response_code(404);
     echo "404 - Página não Encontrada";
 }
+
 
 
 
