@@ -1,7 +1,7 @@
 <?php
-require_once __DIR__ . '/../core/conn.php';
+require_once __DIR__ . '/../core/DBConnection.php';
 
-use app\core\conn.php;
+use app\core\DBConnection;
 
 Class Imagem{
 
