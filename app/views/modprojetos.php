@@ -66,9 +66,13 @@ fetch("../controls/imagem/listar-imagem.php")
                         <p class="descricao">${item.descricao}</p>
 
                         <!-- BOTÃO EXCLUIR -->
-                        <a href="../controls/imagem/excluir-imagem.php?id=${item.id}" class="btn-excluir">Excluir</a>
+                        <form action="../controls/imagem/processar-imagem.php" method="POST">
+                            <input type="hidden" name="id" value="${item.id}">
+                            <input type="submit" value="Excluir" class="btn-excluir">
+                        </form>
 
                         <!-- BOTÃO EDITAR -->
+
                         <a href="editar-texto.php?id_up=${item.id}" class="btn-excluir">Editar</a>
 
 
@@ -100,6 +104,12 @@ fetch("../controls/imagem/listar-imagem.php")
     .catch(err => console.error("Erro ao carregar projetos:", err));
 </script>
 
+
+<!-- 
+<form action="editar-imagem.php" method="POST">
+                            <input type="hidden" name="id_up" value="${item.id}">
+                            <input type="submit" value="Editar" class="btn-excluir">
+                        </form> -->
 
 </body>
 </html>

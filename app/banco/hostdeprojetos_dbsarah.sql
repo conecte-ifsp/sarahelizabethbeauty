@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 25/11/2025 às 15:15
--- Versão do servidor: 10.4.32-MariaDB
--- Versão do PHP: 8.2.12
+-- Tempo de geração: 04-Nov-2025 às 20:23
+-- Versão do servidor: 10.4.24-MariaDB
+-- versão do PHP: 8.0.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,15 +24,15 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `clientes`
+-- Estrutura da tabela `clientes`
 --
 
 CREATE TABLE `clientes` (
   `id` int(11) NOT NULL,
-  `nome` varchar(45) NOT NULL,
+  `nome` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
   `telefone` int(13) NOT NULL,
-  `endereco` varchar(255) NOT NULL,
-  `servico` varchar(45) NOT NULL,
+  `endereco` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `servico` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
   `valor` int(10) NOT NULL,
   `dia` date NOT NULL,
   `hora` time NOT NULL
@@ -41,7 +41,7 @@ CREATE TABLE `clientes` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `imagem`
+-- Estrutura da tabela `imagem`
 --
 
 CREATE TABLE `imagem` (
@@ -49,43 +49,45 @@ CREATE TABLE `imagem` (
   `projeto` varchar(255) NOT NULL,
   `tipo` varchar(255) NOT NULL,
   `posicao` varchar(45) NOT NULL,
-  `endereco1` varchar(255) NOT NULL,
-  `endereco2` varchar(255) NOT NULL,
-  `endereco3` varchar(255) NOT NULL,
-  `endereco4` varchar(255) NOT NULL,
-  `endereco5` varchar(255) NOT NULL,
+  `endereco` varchar(255) NOT NULL,
   `descricao` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Despejando dados para a tabela `imagem`
+-- Extraindo dados da tabela `imagem`
 --
 
-INSERT INTO `imagem` (`id`, `projeto`, `tipo`, `posicao`, `endereco1`, `endereco2`, `endereco3`, `endereco4`, `endereco5`, `descricao`) VALUES
-(69, 'bb', 'cabelo', 'Nenhum', 'IMG-20250401-WA0019.jpg', 'IMG-20250401-WA0029.jpg', 'Next.png', 'Payment Information-rafiki.png', 'idoso-tv.png', 'xfbf'),
-(70, 'xdnhdtn', 'cabelo', 'Nenhum', 'celular.png', 'idoso-ajuda.png', 'Social biography-pana.png', 'Elegant Vintage Floral Sticker Collection for Classic Decor.jpg', 'Devices-amico.png', 's4ys4u6');
+INSERT INTO `imagem` (`id`, `projeto`, `tipo`, `posicao`, `endereco`, `descricao`) VALUES
+(54, 'ayya', 'Maquiagem', 'Nenhum', 'tayna.jpg', 'tayna');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `perfil`
+-- Estrutura da tabela `perfil`
 --
 
 CREATE TABLE `perfil` (
   `id` int(11) NOT NULL,
-  `email` varchar(45) NOT NULL,
-  `senha` varchar(45) NOT NULL,
+  `email` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `senha` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
   `telefone` int(13) NOT NULL,
   `cep` int(8) NOT NULL,
-  `bairro` varchar(255) NOT NULL,
-  `rua` varchar(255) NOT NULL,
+  `bairro` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `rua` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `numero` int(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Extraindo dados da tabela `perfil`
+--
+
+INSERT INTO `perfil` (`id`, `email`, `senha`, `telefone`, `cep`, `bairro`, `rua`, `numero`) VALUES
+(1, 'sarah@gmail', '123', 1112347896, 12345, 'bom clima', 'cravo', 777);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `usuarios`
+-- Estrutura da tabela `usuarios`
 --
 
 CREATE TABLE `usuarios` (
@@ -93,48 +95,47 @@ CREATE TABLE `usuarios` (
   `permissao` int(1) NOT NULL,
   `email` varchar(45) NOT NULL,
   `senha` varchar(255) NOT NULL,
-  `nome` varchar(45) NOT NULL,
-  `endereco` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `nome` varchar(45) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Despejando dados para a tabela `usuarios`
+-- Extraindo dados da tabela `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `permissao`, `email`, `senha`, `nome`, `endereco`) VALUES
-(1, 3, 'admin@sarahelizabethh', 'sarah123@admin', 'Administradora', ''),
-(9, 3, 'admin@sarahelizabeth', '$2y$10$6SR4g2PgTfu8.dTWq.LIiunD2jXbugCvqke3tsoRWgTzdWkbBirZK', 'Administradora', '');
+INSERT INTO `usuarios` (`id`, `permissao`, `email`, `senha`, `nome`) VALUES
+(1, 3, 'admin@sarahelizabethh', 'sarah123@admin', 'Administradora'),
+(9, 3, 'admin@sarahelizabeth', '$2y$10$6SR4g2PgTfu8.dTWq.LIiunD2jXbugCvqke3tsoRWgTzdWkbBirZK', 'Administradora');
 
 --
 -- Índices para tabelas despejadas
 --
 
 --
--- Índices de tabela `clientes`
+-- Índices para tabela `clientes`
 --
 ALTER TABLE `clientes`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices de tabela `imagem`
+-- Índices para tabela `imagem`
 --
 ALTER TABLE `imagem`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices de tabela `perfil`
+-- Índices para tabela `perfil`
 --
 ALTER TABLE `perfil`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices de tabela `usuarios`
+-- Índices para tabela `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT para tabelas despejadas
+-- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
@@ -147,13 +148,13 @@ ALTER TABLE `clientes`
 -- AUTO_INCREMENT de tabela `imagem`
 --
 ALTER TABLE `imagem`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT de tabela `perfil`
 --
 ALTER TABLE `perfil`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`

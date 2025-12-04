@@ -1,5 +1,7 @@
 <?php
 require_once '../models/validar-login.php';
+// senha CRIPTO76@26
+
 // $host= "177.136.241.55";
 // $user= "hostdeprojetos_dbsarah";
 // $pass= "admin@sarahElizabeth";
@@ -20,48 +22,56 @@ $u = new Usuarios($dbase, $host, $user, $pass);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Sarah Elizabeth Beauty</title>
+    <title>Cadastro Sarah Elizabeth Beauty</title>
     <link rel="stylesheet" type="text/css" href="../../public/assets/css/form.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    
 </head>
 <body>
 
     <main class="container">
 
         <form class="login-box" method="POST">
-            <h2 class="titulo">Login</h2>
-
+            <h2 class="titulo">CADASTRO</h2>
+            
             <div class="input-container">
-                <input type="email" name="email" placeholder="Digite o seu e-mail" required>
+                <input type="text" name="permissao" placeholder="" required>
             </div>
 
             <div class="input-container">
-                <input type="password" name="senha" placeholder="Digite a sua senha" required>
+                <input type="email" name="email" placeholder="Digite seu email" required>
+            </div>
+            
+            <div class="input-container">
+                <input type="password" name="senha" placeholder="Digite sua senha" required>
             </div>
 
-            <button type="submit" class="login-button">ENTRAR</button>
+            <div class="input-container">
+                <input type="nome" name="nome" placeholder="Digite seu nome" required>
+            </div>
+
+            <button type="submit" class="login-button">CADASTRO</button>
         </form>
-
     </main>
 
     <?php
         if(isset($_POST['email'])){
+                $permissao = addslashes($_POST['permissao']);
                 $email= addslashes($_POST['email']);
                 $senha= addslashes($_POST['senha']);
-                if(!empty($email) && !empty($senha)){
-                    if($u->logar($email, $senha)){ 
-                        header("Location: modificacoes.php"); 
+                $nome= addslashes($_POST['nome']);
+                $senha_criptografada = password_hash($senha, PASSWORD_DEFAULT);
+                if(!empty($permissao) && !empty($email) && !empty($senha) && !empty($nome)){
+                    if($u->cadastrarDados($permissao, $email, $senha_criptografada, $nome)){
+                        header("Location: login.php");
                     } else {
-                        echo "Erro ao entrar. Tente novamente."; 
+                     echo "Erro ao cadastrar. Tente novamente."; 
                     }
                     
                 }
         }
-    
-    ?>
+?>
 
 </body>
 </html>
